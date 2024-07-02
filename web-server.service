@@ -1,0 +1,16 @@
+[Unit]
+Description=Servidor api
+After=network.target
+
+[Service]
+WorkingDirectory=/home/serveradmin/api
+ExecStart=/usr/bin/node /home/serveradmin/api/src/index.js
+Restart=always
+User=serveradmin
+Group=serveradmin
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
+
